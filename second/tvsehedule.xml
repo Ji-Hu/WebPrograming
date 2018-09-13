@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<TVSchedule SName="LIFESHOW"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="tvschedule.xsd">
+
+<Channel CName="1ch">
+    <Banner>광고판1</Banner>
+    <Day>
+        <Date>2018-10-03</Date>
+        <Holiday>개천절</Holiday>
+    </Day>
+</Channel>
+
+<Channel CName="2ch">
+    <Banner>banner</Banner>
+    <Day>
+        <Date>2018-09-13</Date>
+        <ProgramSlot>
+            <Time>12:00:00</Time>
+            <Title>집에가자</Title>
+        </ProgramSlot>
+    </Day>
+    <Day>
+        <Date>2018-09-09</Date>
+        <ProgramSlot>
+            <Time>05:00:00</Time>
+            <Title Rating="5.0" Language="Korean">Diver</Title>
+        </ProgramSlot>
+        <ProgramSlot VTR="on">
+            <Time>19:00:00</Time>
+            <Title>AquaMan</Title>
+        </ProgramSlot>
+    </Day>
+</Channel>
+
+
+</TVSchedule>

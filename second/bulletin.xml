@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<BOARD
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="bulletin.xsd">
+	<BNAME>TESTBOARD</BNAME>
+	<ARTICLE AWID="id1207">
+		<TITLE>FINDHOPE</TITLE>
+		<AMESSAGE>FINDHOPE</AMESSAGE>
+		<ANAME>YESMAN</ANAME>
+	</ARTICLE>
+	<ARTICLE AWID="id1111">
+		<TITLE>DEEPSIX</TITLE>
+		<AMESSAGE>DEEPSIX!!</AMESSAGE>
+		<ANAME>Maryline_manson</ANAME>
+			<REPLY RWID="id1207">
+				<RMESSAGE>thissong</RMESSAGE>
+				<RNAME>YESMAN</RNAME>
+			</REPLY>
+			<REPLY RWID="id454">
+				<RMESSAGE>gogo</RMESSAGE>
+				<RNAME>me</RNAME>
+			</REPLY>
+	</ARTICLE>
+</BOARD>

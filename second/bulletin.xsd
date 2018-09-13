@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="BNAME" type="xs:string"/>
+<xs:element name="ANAME" type="xs:string"/>
+<xs:element name="RNAME" type="xs:string"/>
+<xs:element name="TITLE" type="xs:string"/>
+<xs:element name="AMESSAGE" type="xs:string"/>
+<xs:element name="RMESSAGE" type="xs:string"/>
+
+<xs:attribute name="AWID" type="xs:string"/>
+<xs:attribute name="RWID" type="xs:string"/>
+
+<xs:element name="REPLY">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="RMESSAGE"/>
+            <xs:element ref="RNAME"/>
+        </xs:sequence>
+         <xs:attribute ref="RWID" use="required"/>
+    </xs:complexType>
+</xs:element>
+
+
+<xs:element name="ARTICLE">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="TITLE"/>
+            <xs:element ref="AMESSAGE"/>
+            <xs:element ref="ANAME"/>
+            <xs:element ref="REPLY" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+         <xs:attribute ref="AWID" use="required"/>
+    </xs:complexType>
+</xs:element>
+
+<xs:element name="BOARD">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="BNAME"/>
+            <xs:element ref="ARTICLE" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+
+</xs:schema>

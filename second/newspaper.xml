@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Newspaper xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="newspaper.xsd">
+
+    <Article Author="AquaMan">
+        <Headline>Beenzino</Headline>
+        <Byline>what this?</Byline>
+        <Lead>firstAlbum</Lead>
+        <Body>Always Awake</Body>
+        <Notes>FISH</Notes>
+    </Article>
+
+    <Article Author="ME"
+    Editor="AGAIN"
+    Date="2018-09-13"
+    Edition="secnod">
+        <Headline>Panic at the Disco!</Headline>
+        <Byline>new clothes</Byline>
+        <Lead>gogo</Lead>
+        <Body>monalisa</Body>
+        <Notes>mola</Notes>
+    </Article>
+    <NEWSPAPER/>
+    <PUBLISHER/>
+    <COPYRIGHT/>
+</Newspaper>

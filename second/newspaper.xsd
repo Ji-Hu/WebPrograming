@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="Headline" type="xs:string"/>
+    <xs:element name="Byline" type="xs:string"/>
+    <xs:element name="Lead" type="xs:string"/>
+    <xs:element name="Body" type="xs:string"/>
+    <xs:element name="Notes" type="xs:string"/>
+
+    <xs:attribute name="Author" type="xs:string"/>
+    <xs:attribute name="Editor" type="xs:string"/>
+    <xs:attribute name="Date" type="xs:date"/>
+    <xs:attribute name="Edition" type="xs:string"/>
+
+    <xs:element name="Article">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Headline"/>
+                <xs:element ref="Byline"/>
+                <xs:element ref="Lead"/>
+                <xs:element ref="Body"/>
+                <xs:element ref="Notes"/>
+            </xs:sequence>
+            <xs:attribute ref="Author" use="required"/>
+            <xs:attribute ref="Editor" use="optional"/>
+            <xs:attribute ref="Date" use="optional"/>
+            <xs:attribute ref="Edition" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Newspaper">
+        <xs:complexType>
+        <xs:sequence>
+        <xs:element ref="Article" maxOccurs="unbounded"/>
+        <xs:element name="NEWSPAPER" type="xs:string" fixed="Vervet Logic Times"/>
+        <xs:element name="PUBLISHER" type="xs:string" fixed="Vervet Logic Press"/>
+        <xs:element name="COPYRIGHT" type="xs:string" fixed="Copyright 2018 Gachon Univ."/>
+        </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

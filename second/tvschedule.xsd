@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="Banner" type="xs:string"/>
+    <xs:element name="Date" type="xs:date"/>
+    <xs:element name="Holiday" type="xs:string"/>
+    <xs:element name="Time" type="xs:time"/>
+    <xs:element name="Description" type="xs:string"/>
+
+    <xs:attribute name="SName" type="xs:string"/>
+    <xs:attribute name="CName" type="xs:string"/>
+    <xs:attribute name="VTR" type="xs:string"/>
+    <xs:attribute name="Rating" type="xs:string"/>
+    <xs:attribute name="Language" type="xs:string"/>
+
+    <xs:element name="ProgramSlot">
+        <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="Time"/>
+            <xs:element name="Title">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                            <xs:attribute ref="Rating"/>
+                            <xs:attribute ref="Language"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element ref="Description" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute ref="VTR"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Day">
+        <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="Date"/>
+            <xs:choice>
+                <xs:element ref="Holiday"/>
+                <xs:element ref="ProgramSlot" maxOccurs="unbounded"/>
+            </xs:choice>
+        </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Channel">
+        <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="Banner"/>
+            <xs:element ref="Day" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute ref="CName"/>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="TVSchedule">
+        <xs:complexType>
+        <xs:sequence>
+        <xs:element ref="Channel" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute ref="SName" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
